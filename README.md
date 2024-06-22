@@ -176,7 +176,7 @@ This section covers site management such as overseeing user accounts, regulating
 
 </details>
 <details>
-<summary>Epic 4; User Experience & Accessibility</summary>
+<summary>Epic 4: User Experience & Accessibility</summary>
 This epic concentrates on improving the site's overall user experience, including the look of the homepage, ease of navigation, and information accessibility.
 
 - Visually Appealing Landing Page [**(SHOULD HAVE)**](https://github.com/Blignaut24/NederLearn/issues/18)
@@ -190,7 +190,7 @@ This epic concentrates on improving the site's overall user experience, includin
 </details>
 
 ### Sitemap
-![NederLearn App Sitemap](static/images/site_map.webp)
+![NederLearn App Sitemap](static/images/sitemap.webp)
 
 ### Wireflow
 
