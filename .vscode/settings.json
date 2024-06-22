@@ -13,6 +13,26 @@
       "**/CVS": true
    },
    "files.autoSave": "off",
-   "workbench.colorTheme": "Visual Studio Dark",
+   "workbench.colorTheme": "Winter is Coming (Dark Blue)",
    "terminal.integrated.gpuAcceleration": "canvas",
+   "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#dc7d52",
+      "activityBar.background": "#dc7d52",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#95eaaf",
+      "activityBarBadge.foreground": "#15202b",
+      "commandCenter.border": "#e7e7e799",
+      "sash.hoverBorder": "#dc7d52",
+      "statusBar.background": "#d15e2a",
+      "statusBar.foreground": "#e7e7e7",
+      "statusBarItem.hoverBackground": "#dc7d52",
+      "statusBarItem.remoteBackground": "#d15e2a",
+      "statusBarItem.remoteForeground": "#e7e7e7",
+      "titleBar.activeBackground": "#d15e2a",
+      "titleBar.activeForeground": "#e7e7e7",
+      "titleBar.inactiveBackground": "#d15e2a99",
+      "titleBar.inactiveForeground": "#e7e7e799"
+   },
+   "peacock.remoteColor": "d15e2a",
 }
