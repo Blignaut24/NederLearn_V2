@@ -128,10 +128,10 @@ symbolizing a comment made on that post. It stores:
 - The date and time it was created
 - A boolean flag that shows whether site administrators have approved it
     """
-    body = models.TextField()
+    body = models.TextField(max_length=2000)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    post = models.ForeignKey('Blogpost', on_delete=models.CASCADE, related_name='comments')
+    blogpost = models.ForeignKey('Blogpost', on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
