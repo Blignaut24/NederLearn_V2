@@ -50,7 +50,7 @@ Here is a list of the services that the NederLearn app provides to its users:
 - The selected resource material is carefully curated.
 - It offers a summary and an external link to the content.
 - Users can choose from a variety of media formats: books, movies, music, podcasts, and series.
-- Resources can be organized according to the Common European Framework of Reference (CEFR):
+- Resources can be organized according to the **Common European Framework of Reference (CEFR)**:
     - A. Beginners Level
         - A1. Beginner
         - A2. Elementary
