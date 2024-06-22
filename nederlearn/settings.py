@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'django_summernote',
     'blog',
 ]
 
@@ -96,6 +99,10 @@ DATABASES = {
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = ["https://blignaut24-nederlearnv2-5ijo1es0adm.ws.codeinstitute-ide.net", 
+    "https://*.gitpod.io",
+    "https://*.herokuapp.com"]
 
 
 
