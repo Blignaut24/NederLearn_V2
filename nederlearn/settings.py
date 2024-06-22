@@ -100,10 +100,9 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-CSRF_TRUSTED_ORIGINS = ["https://blignaut24-nederlearnv2-5ijo1es0adm.ws.codeinstitute-ide.net", 
+CSRF_TRUSTED_ORIGINS = ["https://8000-blignaut24-nederlearnv2-5ijo1es0adm.ws.codeinstitute-ide.net", 
     "https://*.gitpod.io",
     "https://*.herokuapp.com"]
-
 
 
 # Password validation
