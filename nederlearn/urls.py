@@ -1,8 +1,7 @@
-"""
-URL configuration for NederLearn_V2 project.
+"""nederlearn URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -16,29 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls.static import static
-from django.conf import settings
-from blog.views import ProfileDeleteView, custom_403_error
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("blog.urls"), name="blog-urls"),
     path('summernote/', include('django_summernote.urls')),
-    path('accounts/', include('allauth.urls')),
-    path(
-        'account/delete/<int:pk>/',
-        ProfileDeleteView.as_view(),
-        name='account_delete'
-    ),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT
-    )
-
-# Custom error handler for 403 Forbidden errors.
-# Django uses default views for other common HTTP errors (404, 500),
-# unless specified otherwise in similar manner.
-handler403 = custom_403_error

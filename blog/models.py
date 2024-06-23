@@ -63,11 +63,11 @@ class Blogpost(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField(max_length=20000)
     excerpt = models.TextField(max_length=500, blank=True)
-    status = models.IntegerField(choices=STATUS, default=1)
-    featured_image = CloudinaryField('image', default='blogpost_placeholder')
+    status = models.IntegerField(choices=STATUS, default=0)
+    featured_image = CloudinaryField('image', default='placeholder')
     media_category = models.ForeignKey(
         'MediaCategory', on_delete=models.SET_NULL,
-        related_name='blog_posts', null=True, blank=False
+        related_name='blog_posts', null=True, blank=True
     )
     #release_year = models.IntegerField(validators=[validate_year], blank=True)
     release_year = models.IntegerField(validators=[validate_year])
@@ -131,7 +131,7 @@ symbolizing a comment made on that post. It stores:
     body = models.TextField(max_length=2000)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    blogpost = models.ForeignKey('Blogpost', on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey('Blogpost', on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
