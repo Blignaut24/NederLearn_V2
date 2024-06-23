@@ -2,7 +2,7 @@
 # Django Imports
 # ---------------------
 from django.contrib import admin
-from .models import Blogpost, Comment ,MediaCategory
+from .models import Blogpost, Comment ,MediaCategory, UserProfile
 from django_summernote.admin import SummernoteModelAdmin
 
 # ---------------------
