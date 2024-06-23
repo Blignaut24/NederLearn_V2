@@ -1,0 +1,698 @@
+/*
+* Google Font Imports
+* Importing different fonts from Google Fonts for use throughout the website.
+*/
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/*
+* Root Styles
+* Defining global styling variables that can be reused across the CSS. This includes fonts and color definitions.
+*/
+:root {
+    /* fonts */
+    --font-primary: "EB Garamond", serif;
+    --font-secondary: "Quattrocento Sans", serif;
+    --font-tertiary: "Playfair Display", serif;
+    --font-quaternary: "Fira Sans", serif;
+
+    /* color*/
+    --primary-color: #F8F8FF;
+    /*backround color*/
+    --secondary-color: #212c63;
+    --third-color: #be6934;
+    --accent-color: #83a7ca;
+    --light-bg: #E6E6EA;
+    --light-text-gr: #888b91;
+    --black-text: #191919; 
+    /* Text*/
+}
+
+/* --- BODY --- */
+body {
+    font-family: var(--font-primary);
+    color: var(--black-text);
+    background-color: var(--primary-color);
+}
+
+h1 {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+}
+
+h2,
+h3 {
+    font-weight: bolder;
+}
+
+.alert-container {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    width: 100%;
+    padding: 2px;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
+    -webkit-box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
+    -moz-box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--accent-color);
+}
+
+.navbar-logo {
+    font-family: var(--font-secondary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: transform 0.1s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    color: var(--light-text-gr);
+}
+
+.nav-link:hover {
+    color: var(--black-text);
+}
+
+.nav-link.dropdown-toggle i.fas.fa-user-circle {
+    color: var(--accent-color);
+    transition: transform 0.1s ease;
+}
+
+.nav-link.dropdown-toggle i.fas.fa-user-circle:hover {
+    transform: scale(1.1);
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #050b12;
+    color: var(--light-text-gr);
+    box-shadow: 43px 142px 69px -151px rgba(7, 29, 37, 0.75) inset;
+    -webkit-box-shadow: 43px 142px 69px -151px rgba(7, 29, 37, 0.75) inset;
+    -moz-box-shadow: 43px 142px 69px -151px rgba(7, 29, 37, 0.75) inset;
+}
+
+.footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: transform 0.1s ease;
+}
+
+.footer a:hover {
+    color: var(--light-text-gr);
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+/* --- BUTTONS --- */
+/* Primary Button Styling with Inset Shadow */
+.btn-primary,
+.btn-signup,
+.btn-secondary,
+.btn-danger {
+    background-color: var(--third-color);
+    color: var(--light-text-gr);
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.1s;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Hover Styling */
+.btn-primary:hover,
+.btn-signup:hover,
+.btn-secondary:hover,
+.btn-danger:hover {
+    background-color: #a14d19;
+    color: var(--light-text-gr);
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Button Active (Click) Styling */
+.btn-primary:active,
+.btn-signup:active,
+.btn-secondary:active,
+.btn-danger:active {
+    background-color: var(--secondary-color);
+    color: var(--light-text-gr);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+/* Button Focus Styling */
+.btn-primary:focus,
+.btn-signup:focus,
+.btn-secondary:focus,
+.btn-danger:focus {
+    background-color: var(--third-color);
+    color: var(--light-text-gr);
+    outline: none;
+    box-shadow: inset 0 0 0 2px var(--accent-color);
+}
+
+/* Specific Colors for .btn-secondary */
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: var(--light-text-gr);
+}
+
+.btn-secondary:hover {
+    background-color: #226c79;
+}
+
+.btn-secondary:active {
+    background-color: #226c79;
+}
+
+/* Selected Category Button - active */
+.btn.ctg.active {
+    background-color: #193f46;
+    color: var(--light-text-gr);
+}
+
+/* 'Like' Button with heart icon */
+.btn-like {
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    background: transparent;
+    border: none;
+}
+
+.fa-heart {
+    color: var(--third-color);
+}
+
+/* --- LINKS --- */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+a:active {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.link,
+.post-link,
+.page-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.link:hover,
+.post-link:hover,
+.page-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.custom-page-number {
+    background: none;
+    color: var(--accent-color);
+    padding: 5px;
+    margin: 5px;
+}
+
+/* --- CARD STYLES --- */
+.card {
+    border: none;
+    background-color: var(-light-bg);
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(15, 15, 15, 0.2);
+}
+
+.card-body {
+    padding: 1rem;
+    -webkit-box-shadow: 5px 5px 5px 0px #0000006b,
+        inset 4px 4px 15px 0px #0000006b,
+        15px 4px 48px 15px rgba(18, 18, 18, 0.55);
+    box-shadow: 5px 5px 5px 0px #0000006b,
+        inset 4px 4px 15px 0px #0000006b,
+        15px 4px 48px 15px rgba(18, 18, 18, 0.55);
+}
+
+.card-title {
+    color: var(--light-text-gr);
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-text {
+    color: var(--light-text-gr);
+    font-size: 14px;
+    text-overflow: ellipsis;
+}
+
+.aspect-ratio-3-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 66.67%;
+    overflow: hidden;
+}
+
+.image-container .aspect-ratio-3-2 {
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover .aspect-ratio-3-2 {
+    transform: scale(1.1);
+}
+
+.author {
+    bottom: -5px;
+    left: 6px;
+    color: var(--light-text-gr);
+    background-color: rgba(1, 55, 48, 0.5);
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+}
+
+/* Bookmark Icon */
+.btn-bookmark {
+    border: none;
+    background: transparent;
+    color: var(--secondary-color);
+    margin-bottom: 4px;
+}
+
+.btn-bookmark:hover,
+.btn-bookmark:active {
+    background: transparent;
+    border: none;
+    color: var(--light-text-gr);
+}
+
+.fa-bookmark {
+    color: var(--light-text-gr);
+}
+
+.post-bookmark {
+    margin-left: 5%;
+    color: var(--light-text-gr);
+}
+
+/* Masthead Top Section in Cards w/ Title & Image  */
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: auto;
+    width: 100%;
+}
+
+.masthead .row {
+    display: flex;
+}
+
+.masthead-text {
+    background-color: rgba(1, 43, 48);
+    color: var(--light-text-gr);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 45px 13px 31px -16px rgba(0, 0, 0, 0.75) inset;
+    -webkit-box-shadow: 45px 13px 31px -16px rgba(0, 0, 0, 0.75) inset;
+    -moz-box-shadow: 45px 13px 31px -16px rgba(0, 0, 0, 0.75) inset;
+}
+
+
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-image .image-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.masthead-text,
+.masthead-image {
+    padding: 0px;
+}
+
+.masthead-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-title {
+    margin: 5%;
+    font-size: 28px;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: var(--light-text-gr);
+}
+
+.card-excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blogpost-card {
+    height: 460px;
+    overflow: hidden;
+}
+
+/* --- FORMS FIELD TARGETING --- */
+
+.form-control {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.form-control[type="file"],
+.form-control[name="bio"] {
+    margin-bottom: 20px;
+}
+
+.form-control,
+select,
+textarea {
+    background-color: var(--light-text-gr);
+    color: black;
+    border: 1px solid black;
+}
+
+/* --- USER PROFILE w/ CATEGORY FIELDS --- */
+.profile-details {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profile-table td {
+    padding: 16px;
+    border-bottom: 1px solid #1b525c;
+}
+
+.profile-links a {
+    margin-right: 10px;
+}
+
+
+.category-label-top,
+.category-label-top i {
+    color: var(--accent-color);
+    font-weight: bolder;
+}
+
+.category-label-top {
+    text-align: left;
+    width: 100%;
+    line-height: 1.5;
+}
+
+.category-label {
+    font-weight: bolder;
+    text-align: right;
+    width: 26%;
+    line-height: 1.5;
+}
+
+.category-label,
+.category-label i {
+    color: var(--accent-color);
+}
+
+.top-categories-heading {
+    font-family: var(--font-secondary);
+    color: var(--secondary-color);
+    text-align: center;
+    font-weight: bolder;
+}
+
+.table-spacing {
+    height: 40px;
+}
+
+.top-categories td:first-child {
+    text-align: right;
+}
+
+.bio-text {
+    color: var(--light-text-gr);
+    font-weight: 100;
+    font-size: small;
+    width: 100%;
+}
+
+.bio-height {
+    min-height: 50px;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 230px;
+    height: auto;
+    display: inline-block;
+    object-fit: cover;
+}
+
+/* --- LOGIN / LANDING PAGE --- */
+.login-page-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.h2-login {
+    margin: -16px;
+    font-size: 26px;
+}
+
+.card-login {
+    padding: 14px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.login-culture-club {
+    font-family: var(--font-secondary);
+    font-size: 57px;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 5px 2px 2px rgba(0, 0, 0, 0.71);
+}
+
+/* Login image on large screen */
+.login-logo img {
+    height: 560px;
+    margin-top: -125px;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+
+/* --- MEDIA QUERIES --- */
+
+/* Responsive adjustments for tablets and Kindle-sized devices */
+@media (max-width: 1024px) {
+    .login-page-container {
+        flex-direction: column;
+        min-height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .login-logo img {
+        height: auto;
+        max-height: 40vh;
+        margin-top: 0;
+    }
+}
+
+/* Styles for large screens (992px and above) */
+@media (min-width: 992px) {
+    .masthead-image::before {
+        content: '';
+        position: absolute;
+        right: 100%;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(1, 43, 48);
+        transform: skew(15deg);
+        transform-origin: top right;
+    }
+}
+
+/* Responsive adjustments for medium screens (tablets) */
+@media (max-width: 992px) {
+
+    .masthead .row {
+        flex-wrap: wrap;
+    }
+
+    .masthead-text,
+    .masthead-image {
+        flex-basis: 100%;
+    }
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 767px) {
+    .profile-img {
+        margin-bottom: 20px;
+    }
+
+    .masthead-text .post-subtitle,
+    .masthead-text .post-bookmark {
+        font-size: 0.9em;
+    }
+
+    .masthead-text h1 {
+        font-size: 20px;
+    }
+
+    .masthead-image img {
+        max-height: 300px;
+    }
+
+    .blogpost-card {
+        height: 518px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 580px) {
+
+    .login-logo img {
+        max-height: 30vh;
+    }
+
+    .card-body {
+        padding: 16px;
+    }
+
+    .top-categories td:first-child {
+        text-align: left;
+    }
+
+    .profile-details {
+        padding: 0px;
+    }
+
+    .profile-table td {
+        padding: 4px;
+    }
+
+    .masthead-image {
+        order: -1;
+        /* Switches place for image (above the text) */
+    }
+
+    .blogpost-card {
+        height: 508px;
+    }
+}
+
+
+/* Responsive adjustments for extra small screens */
+@media (max-width: 480px) {
+    .login-logo img {
+        max-height: 27vh;
+        margin-top: -32px;
+    }
+
+    .h2-login {
+        padding: 7px;
+        margin: -22px;
+    }
+
+    .login-culture-club {
+        margin-top: 2px;
+        font-size: 24px;
+        margin-bottom: 32px !important;
+    }
+
+    .card-login {
+        margin-top: 6px !important;
+        margin-left: 8px !important;
+        margin-right: 8px !important;
+        padding: 8px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .blogpost-card {
+        height: 470px;
+    }
+}
+
+/* Responsive adjustments for min width 320px */
+@media (max-width: 400px) {
+    .blogpost-card {
+        height: 420px;
+    }
+}
