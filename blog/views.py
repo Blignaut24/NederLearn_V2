@@ -17,7 +17,7 @@ from .models import Blogpost
 # ---------------------
 # The 'home' view is defined and it renders a template called 'home.html' when a request is made to the home page.
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html') 
 
 # ---------------------
 # BlogPostList View

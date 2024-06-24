@@ -16,17 +16,22 @@
     --font-tertiary: "Playfair Display", serif;
     --font-quaternary: "Fira Sans", serif;
 
+    
+
     /* color*/
-    --primary-color: #F8F8FF;
+    --primary-color: hsl(0, 0%, 0%);
     /*backround color*/
-    --secondary-color: #212c63;
-    --third-color: #be6934;
-    --accent-color: #83a7ca;
-    --light-bg: #E6E6EA;
-    --light-text-gr: #888b91;
-    --black-text: #191919; 
+    --secondary-color: hsl(0, 0%, 86%);
+    --third-color: hsl(0, 0%, 100%);
+    --accent-color: hsl(248, 34%, 44%);
+    --light-bg: hsl(0, 0%, 0%);
+    --light-text-gr: hsl(0, 0%, 0%);
+    --black-text: hsl(21, 88%, 54%); 
     /* Text*/
 }
+
+
+
 
 /* --- BODY --- */
 body {
@@ -57,10 +62,7 @@ h3 {
 
 /* --- NAVBAR --- */
 .navbar {
-    background-color: var(--primary-color);
-    box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
-    -webkit-box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
-    -moz-box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
+    background-color: var(--third-color);
 }
 
 .navbar-dark .navbar-brand {
@@ -101,9 +103,6 @@ h3 {
 .footer {
     background-color: #050b12;
     color: var(--light-text-gr);
-    box-shadow: 43px 142px 69px -151px rgba(7, 29, 37, 0.75) inset;
-    -webkit-box-shadow: 43px 142px 69px -151px rgba(7, 29, 37, 0.75) inset;
-    -moz-box-shadow: 43px 142px 69px -151px rgba(7, 29, 37, 0.75) inset;
 }
 
 .footer a {
