@@ -1,11 +1,21 @@
 # ---------------------
 # Django Imports
 # ---------------------
+
+from django.shortcuts import render
+
 # Import generic views from Django
 from django.views import generic
 
 # Import Blogpost and Comment models
 from .models import Blogpost, Comment
+
+# ---------------------
+# Define home function
+# ---------------------
+# This function renders the base.html page when the home URL is requested.
+def home(request):
+    return render(request, 'base.html')
 
 # ---------------------
 # PostList View
