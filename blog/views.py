@@ -13,6 +13,13 @@ from django.views import generic
 from .models import Blogpost
 
 # ---------------------
+# Define the home view
+# ---------------------
+# The 'home' view is defined and it renders a template called 'home.html' when a request is made to the home page.
+def home(request):
+    return render(request, 'home.html')
+
+# ---------------------
 # BlogPostList View
 # ---------------------
 # This class-based view displays a list of published blogposts, sorted by creation date. The list is paginated.
