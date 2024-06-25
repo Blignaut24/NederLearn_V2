@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign Up" %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-sm-12 mt-3">
+            <div class="card-body text-center m-5">
+                <!-- Asking for Logout Confirmation -->
+                <h3>{% trans "Ready to sign out?" %}</h3>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+                <p class="m-4">
+                    {% trans 'If "If "Yes", prepare for a magical teleportation to the land of logins!' %}
+                </p>
+
+                <!-- Confirmation or Cancellation -->
+                <div class="text-center m-2">
+                    <!-- Logout Form -->
+                    <form method="post" action="{% url 'account_logout' %}">
+                        {% csrf_token %}
+                        <!-- Redirect Field, if applicable -->
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}"
+                            value="{{ redirect_field_value }}" />
+                        {% endif %}
+
+                        <!-- Button to Confirm Logout -->
+                        <button class="btn btn-danger right m-2"
+                            type="submit">{% trans 'Yes, Sign Me Out' %}</button>
+
+                        <!-- Link to Cancel and Return Home -->
+                        <a href="{% url 'home' %}"
+                            class="btn btn-secondary m-2">No, Go Back</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

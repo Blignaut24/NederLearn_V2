@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+
+<div
+    class="login-page-container d-flex align-items-center justify-content-center">
+    <!-- Logo Container for Branding -->
+    <div class="login-logo mt-3 mb-2">
+        <img src="{% static 'images/logo2.png' %}" alt="Nederlearn V2 Logo">
+    </div>
+
+    <!-- Container for the Login Form -->
+    <div class="login-form-container col-lg-4 col-md-10 col-sm-12">3
+        <!-- Heading for the Login Page, visible only on medium and larger screens -->
+        <h1 class="text-center login-nederlearn mb-2 d-none d-md-block">
+            {% trans "NederLearn_V2" %}</h1>
+
+        <!-- Container Login Form -->
+        <div class="card-body card-login">
+            <!-- Login Heading -->
+            <h2 class="text-center h2-login mt-2">{% trans "log in" %}</h2>
+            <br>
+
+            <!-- Sign Up Link for New Users -->
+            <small>
+                {% trans "Not a member yet? To read posts and interact with the community," %}
+                <a class="link" href="{{ signup_url }}">
+                    {% trans "sign up" %}
+                </a>
+                {% trans "first." %}
+            </small>
+            <hr>
+
+            <!-- Login Form -->
+            <form class="login mt-4" method="POST"
+                action="{% url 'account_login' %}">
+                {% csrf_token %}
+                <!-- Rendering the Form targeting specific fields -->
+                <div class="mb-3">
+                    <label for="{{ form.login.id_for_label }}"
+                        class="form-label">{{ form.login.label }}</label>
+                    <input type="text" class="form-control"
+                        id="{{ form.login.id_for_label }}"
+                        name="{{ form.login.html_name }}"
+                        placeholder="Username or email">
+                    <!-- Display errors for login field -->
+                    {% if form.login.errors %}
+                    <div class="text-danger">{{ form.login.errors|safe }}</div>
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.password.id_for_label }}"
+                        class="form-label">{{ form.password.label }}</label>
+                    <input type="password" class="form-control"
+                        id="{{ form.password.id_for_label }}"
+                        name="{{ form.password.html_name }}"
+                        placeholder="Password">
+                    <!-- Display errors for password field -->
+                    {% if form.password.errors %}
+                    <div class="text-danger">{{ form.password.errors|safe }}
+                    </div>
+                    {% endif %}
+                </div>
+
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}"
+                    value="{{ redirect_field_value }}" />
+                {% endif %}
+
+                <!-- Submit Button -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary"
+                        type="submit">{% trans "Log In" %}</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
