@@ -6,6 +6,8 @@ from django.shortcuts import render
 
 # Import generic views from Django
 from django.views import generic
+from django.shortcuts import redirect
+
 
 # Import Blogpost model
 from .models import Blogpost
