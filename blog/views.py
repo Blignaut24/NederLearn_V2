@@ -1,25 +1,20 @@
 # ---------------------
 # Django Imports
 # ---------------------
-
 from django.shortcuts import render
-
-# Import generic views from Django
 from django.views import generic
 from django.shortcuts import redirect
-
-
-# Import Blogpost model
-from .models import Blogpost
-from .models import MediaCategory
-
+from .models import Blogpost, MediaCategory
+from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
+from django.urls import reverse_lazy
 
 # ---------------------
 # Define the home view
 # ---------------------
-# The 'home' view is defined and it renders a template called 'home.html' when a request is made to the home page.
+# The home view renders a template called 'home.html' when a request is made to the home page.
 def home(request):
-    return render(request, 'index.html') 
+    return render(request, 'index.html')
 
 # ---------------------
 # BlogPostList View
@@ -34,8 +29,7 @@ class BlogPostList(generic.ListView):
     # ---------------------
     # Dispatch Method
     # ---------------------
-    # This method is called before any other method in the view. It checks if
-    # the user is authenticated. If not, they are redirected to the login page.
+    # This method is called before any other method in the view. It checks if the user is authenticated. If not, they are redirected to the login page.
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             return redirect('account_login')
@@ -62,3 +56,4 @@ class BlogPostList(generic.ListView):
         context = super().get_context_data(**kwargs)
         context['categories'] = MediaCategory.objects.all()
         return context
+
