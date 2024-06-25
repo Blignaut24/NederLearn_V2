@@ -1,5 +1,3 @@
-# jshint esversion: 6
-
 # ---------------------
 # Django Imports
 # ---------------------
@@ -11,6 +9,8 @@ from django.views import generic
 
 # Import Blogpost model
 from .models import Blogpost
+from .models import MediaCategory
+
 
 # ---------------------
 # Define the home view
@@ -27,7 +27,7 @@ class BlogPostList(generic.ListView):
     model = Blogpost
     context_object_name = 'blogposts'
     template_name = 'index.html'
-    paginate_by = 6
+    paginate_by = 8
 
     # ---------------------
     # Dispatch Method

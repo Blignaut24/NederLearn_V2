@@ -11,5 +11,5 @@ from . import views
 # For example, the home path is directed to the home view, which is responsible for rendering the base.html template.
 
 urlpatterns = [
-    path("", views.home, name="home"),
+    path("", views.BlogPostList.as_view(), name="home"),
 ]
