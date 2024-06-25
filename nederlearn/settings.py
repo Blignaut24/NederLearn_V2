@@ -35,7 +35,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")  
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  
+DEBUG = False  
 
 ALLOWED_HOSTS = [
     "8000-blignaut24-nederlearnv2-5ijo1es0adm.ws.codeinstitute-ide.net",
