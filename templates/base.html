@@ -57,7 +57,7 @@
                     <li class="nav-item"><a class="nav-link" href="#">Log Out</a></li>
                     <!-- If user is not authenticated -->
                     {% else %}
-           TODO: Fix NoReverseMatch at /accounts/login/     <!--    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Join the Club</a></li> -->
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Join the Club</a></li> 
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'about_us' %}">About Us</a></li>
                     {% endif %}
@@ -69,7 +69,7 @@
     <!-- Main content -->
     <main class="flex-shrink-0 main-bg container my-4">
         {% block content %}
-        <!-- Content goes here -->
+        <!-- Content Goes here -->
         {% endblock content %}
     </main>
 

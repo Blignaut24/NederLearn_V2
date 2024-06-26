@@ -63,7 +63,7 @@ class Blogpost(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField(max_length=20000)
     excerpt = models.TextField(max_length=500, blank=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     featured_image = CloudinaryField('image', default='placeholder')
     media_category = models.ForeignKey(
         'MediaCategory', on_delete=models.SET_NULL,
