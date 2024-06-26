@@ -12,4 +12,6 @@ from . import views
 
 urlpatterns = [
     path("", views.BlogPostList.as_view(), name="home"),
+    path('about-us/', TemplateView.as_view(template_name='about_us.html'),
+          name='about_us'),
 ]
