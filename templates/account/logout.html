@@ -1,48 +1,22 @@
+# Django template language
+# Extends the base.html file, which acts as a master layout
 {% extends "base.html" %}
 
+# Load internationalization and account modules from Django
 {% load i18n %}
 {% load account socialaccount %}
 
+# Set the title of the head block to "Sign Up"
 {% block head_title %}{% trans "Sign Up" %}{% endblock %}
 
+# Define the content of the page
 {% block content %}
-
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8 col-sm-12 mt-3">
-            <div class="card-body text-center m-5">
-                <!-- Asking for Logout Confirmation -->
-                <h3>{% trans "Ready to sign out?" %}</h3>
-                <div class="row">
-                    <div class="col">
-                        <hr>
-                    </div>
-                </div>
-                <p class="m-4">
-                    {% trans 'If "If "Yes", prepare for a magical teleportation to the land of logins!' %}
-                </p>
-
-                <!-- Confirmation or Cancellation -->
-                <div class="text-center m-2">
-                    <!-- Logout Form -->
-                    <form method="post" action="{% url 'account_logout' %}">
-                        {% csrf_token %}
-                        <!-- Redirect Field, if applicable -->
-                        {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}"
-                            value="{{ redirect_field_value }}" />
-                        {% endif %}
-
-                        <!-- Button to Confirm Logout -->
-                        <button class="btn btn-danger right m-2"
-                            type="submit">{% trans 'Yes, Sign Me Out' %}</button>
-
-                        <!-- Link to Cancel and Return Home -->
-                        <a href="{% url 'home' %}"
-                            class="btn btn-secondary m-2">No, Go Back</a>
-                    </form>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h3>{% trans "You have successfully logged out" %}</h3>
+            <p>{% blocktrans %}Click <a class="link" href="{{ login_url }}">Log
+                In</a> to re-enter the club.{% endblocktrans %}</p>
         </div>
     </div>
 </div>
