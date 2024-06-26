@@ -39,11 +39,11 @@ class UserProfileAdmin(admin.ModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     # Define display fields for comments
-    list_display = ('user', 'body', 'post', 'created_on', 'approved')
+    list_display = ('user', 'body', 'blogpost', 'created_on', 'approved')
     # Define filter fields
     list_filter = ('approved', 'created_on')
     # Define search fields
-    search_fields = ('user', 'body', 'post')
+    search_fields = ('user', 'body', 'blogpost')
     # Define actions
     actions = ['approved_comments']
 

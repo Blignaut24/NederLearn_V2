@@ -4,6 +4,7 @@ from django import forms
 from django_summernote.widgets import SummernoteWidget
 from .models import Comment, UserProfile, Blogpost
 
+
 # ---------------------
 # Blogpost Form
 # ---------------------
@@ -52,7 +53,15 @@ class CommentForm(forms.ModelForm):
 
         # Define form widgets and their attributes
         widgets = {
-            # Rest of the widgets here...
+            'body': forms.Textarea(
+                attrs={
+                    'class': 'form-control',
+                    'rows': 2,
+                    'cols': 50,
+                    'placeholder': 'Write your comment here...',
+                    'maxlength': '1000'
+                }
+            ),
         }
         labels = {'body': ''}
 
