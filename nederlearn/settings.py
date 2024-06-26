@@ -66,7 +66,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/account/logout.html'
+LOGOUT_REDIRECT_URL = '/accounts/login'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
