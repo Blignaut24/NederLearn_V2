@@ -15,5 +15,5 @@ urlpatterns = [
     path("", views.BlogPostList.as_view(), name="home"),
     path('about-us/', TemplateView.as_view(template_name='about_us.html'),
         name='about_us'),
-    path('<slug:slug>/', views.BlogPostDetail.as_view(), name='blogpost_detail'),
+    path('<slug:slug>/', views.BlogPostDetail.as_view(), name='like_unlike'),
 ]

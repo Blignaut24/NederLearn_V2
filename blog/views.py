@@ -1,8 +1,9 @@
 # ---------------------
 # Django Imports
 # ---------------------
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from .models import Blogpost, MediaCategory
 from django.contrib import messages
@@ -12,7 +13,7 @@ from django.urls import reverse_lazy
 # ---------------------
 # Define the home view
 # ---------------------
-# The home view renders a template called 'home.html' when a request is made to the home page.
+# This function renders a template called 'index.html' when a request is made to the home page.
 def home(request):
     return render(request, 'index.html')
 
@@ -34,6 +35,16 @@ class BlogPostList(generic.ListView):
         if not request.user.is_authenticated:
             return redirect('account_login')
         return super().dispatch(request, *args, **kwargs)
+
+class LikeUnlike(View):
+    def post(self, request, slug, *args, **kwargs):
+        blogpost = get_object_or_404(Blogpost, slug=slug)
+        if blogpost.likes.filter(id=request.user.id).exists():
+            blogpost.likes.remove(request.user)
+        else:
+            blogpost.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('blogpost_detail', args=[slug]))
 
     # ---------------------
     # Get Queryset Method
@@ -57,7 +68,7 @@ class BlogPostList(generic.ListView):
         context['categories'] = MediaCategory.objects.all()
         return context
 
-    paginate_by = 6
+    paginate_by = 8
 
 # ---------------------
 # BlogPostDetail Class
