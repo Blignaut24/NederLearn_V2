@@ -57,8 +57,8 @@
                     <li class="nav-item"><a class="nav-link" href="#">Log Out</a></li>
                     <!-- If user is not authenticated -->
                     {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Join the Club</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Join the Club</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'about_us' %}">About Us</a></li>
                     {% endif %}
                 </ul>
