@@ -2,6 +2,28 @@
 {% block content %}
 
 
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mt-3 left top">
+            <div class="card-body">
+                <div class="row">
+                    <!-- Displaying UserProfile fields -->
+                    <img class="rounded-circle account-img"
+                        src="{{ userprofile.profile_image.url }}"
+                        alt="Profile Image">
+                    <h3 class="account-heading">{{ user.username }}</h3>
+                    <p class="card-text">Bio: {{ userprofile.bio }}</p>
+                    <p>Country: {{ userprofile.country }}</p>
+                    <p>Top Movies: {{ profile.top_movies }}</p>
+                    <p>Top Series: {{ profile.top_series }}</p>
+                    <p>Top Music Albums: {{ profile.top_music_albums }}</p>
+                    <p>Top Books: {{ profile.top_books }}</p>
+                    <p>Top Podcasts: {{ profile.top_podcasts }}</p>
+                    <p>Top Miscellaneous: {{ profile.top_miscellaneous }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
