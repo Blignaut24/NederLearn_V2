@@ -1,23 +1,23 @@
-# Django template language
-# Extends the base.html file, which acts as a master layout
-{% extends "base.html" %}
+{% extends "base.html" %}  # This line is extending the base.html file
 
-# Load internationalization and account modules from Django
-{% load i18n %}
-{% load account socialaccount %}
+{% load i18n %}  
+{% load account socialaccount %}  
 
-# Set the title of the head block to "Sign Up"
-{% block head_title %}{% trans "Sign Up" %}{% endblock %}
+{% block head_title %}{% trans "Sign Up" %}{% endblock %}  
 
-# Define the content of the page
-{% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "You have successfully logged out" %}</h3>
+{% block content %}  
+
+<div class="container">  
+    <div class="row">  
+        <div class="col-md-8 mt-3 offset-md-2"> 
+            <h3>{% trans "You have successfully logged out" %}</h3>  
+
             <p>{% blocktrans %}Click <a class="link" href="{{ login_url }}">Log
-                In</a> to re-enter the club.{% endblocktrans %}</p>
-        </div>
-    </div>
-</div>
-{% endblock %}
+                    In</a>  # Providing a link to log back in
+                to re-enter the club.{% endblocktrans %}</p>
+            </p>
+        </div>  
+    </div>  
+</div>  
+
+{% endblock %}  
