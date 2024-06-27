@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-sm-12 mt-3">
+            <div class="card-body text-center m-5">
+                <h3>Page Not Found (404)</h3>
+                <p class="m-4">The page you are looking for might have been
+                    removed, had its name changed, or is temporarily
+                    unavailable.</p>
+                <!-- Check if user is authenticated -->
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'home' %}" class="btn btn-secondary m-2">Return
+                    Home</a>
+                {% else %}
+                <a href="{% url 'account_login' %}"
+                    class="btn btn-secondary m-2">Return Home</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

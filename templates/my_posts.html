@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <!-- Masthead Section -->
+    <div class="masthead">
+        <div class="container card-body">
+            <div class="row g-0">
+                <div class="col-md-12 masthead-text">
+                    <h1 class="post-title text-center mb-5"><strong>My
+                            Posts</strong></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3">
+            <div class="row">
+                {% for blogpost in my_blogposts %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <!-- Image and link to blogpost detail -->
+                            <a href="{% url 'blogpost_detail' blogpost.slug %}"
+                                class="image-container-link">
+                                <div class="image-container">
+                                    <img class="card-img-top img-fluid aspect-ratio-3-2"
+                                        src="{{ blogpost.featured_image.url }}"
+                                        alt="{{ blogpost.blog_title }} Image">
+                                </div>
+                            </a>
+                            <!-- Blog Post Title and Link to Full Post -->
+                            <a href="{% url 'blogpost_detail' blogpost.slug %}"
+                                class="post-link">
+                                <h2 class="card-title mt-2">
+                                    {{ blogpost.blog_title }}</h2>
+                            </a>
+                            <hr>
+                            <!-- Blog Post Metadata (Date and Likes) -->
+                            <p class="card-text text-muted h6">
+                                {{ blogpost.created_on }} <i
+                                    class="far fa-heart"></i>
+                                {{ blogpost.number_of_likes }}
+                            </p>
+                            <!-- Edit and Delete Post Options -->
+                            <div class="d-flex justify-content-between mt-2">
+                                <a href="{% url 'blogpost_update' blogpost.slug %}"
+                                    class="btn btn-secondary">Edit Post</a>
+                                <a href="{% url 'blogpost_delete' blogpost.slug %}"
+                                    class="btn btn-danger">Delete Post</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p>You have no blog posts yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}"
+                    class="page-link">&laquo; Prev</a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}"
+                    class="page-link">Next &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+
+{% endblock %}

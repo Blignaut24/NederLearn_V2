@@ -36,7 +36,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")  
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "8000-blignaut24-nederlearnv2-5ijo1es0adm.ws.codeinstitute-ide.net",
@@ -51,17 +51,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
+    'cloudinary',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'crispy_forms',
-    'crispy_bootstrap5',
-    'cloudinary',
     'django_summernote',
-    'blog',
+    'crispy_forms',
+    'blog.apps.BlogConfig',
 ]
 
 SITE_ID = 1

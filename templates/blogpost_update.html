@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container col-md-8 col-sm-12">
+    <!-- Masthead Section -->
+    <div class="masthead">
+        <div class="container card-body">
+            <div class="row g-0">
+                <div class="col-md-12 masthead-text">
+                    <h1 class="post-title">Edit & Update your Blog Post</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="row">
+        <div class="col card mb-4">
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="text-center mt-4">
+                        <button type="submit"
+                            class="btn btn-primary btn-lg">Save
+                            changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -19,14 +19,13 @@
     
 
     /* color*/
-    --primary-color: hsl(0, 0%, 100%);
-    /*backround color*/
-    --secondary-color: hsl(0, 0%, 86%);
-    --third-color: hsl(0, 0%, 100%);
-    --accent-color: hsl(248, 34%, 44%);
-    --light-bg: hsl(0, 0%, 0%);
-    --light-text-gr: hsl(0, 0%, 0%);
-    --black-text: hsl(21, 88%, 54%); 
+    --primary-color: #012326;
+    --secondary-color: #e2da83;
+    --third-color: #b9581b;
+    --accent-color: #0794a7;
+    --dark-bg: #0000006b;
+    --light-text-gr: #cbeaf1;
+    --white-text: #ffffff; 
     /* Text*/
 }
 
