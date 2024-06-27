@@ -19,14 +19,19 @@
     
 
     /* color*/
-    --primary-color: hsl(0, 0%, 100%);
-    /*backround color*/
-    --secondary-color: hsl(0, 0%, 86%);
-    --third-color: hsl(0, 0%, 100%);
-    --accent-color: hsl(248, 34%, 44%);
-    --light-bg: hsl(0, 0%, 0%);
-    --light-text-gr: hsl(0, 0%, 0%);
-    --black-text: hsl(21, 88%, 54%); 
+    --primary-color: #ffffff;
+    --secondary-color: #e2da83;
+    --third-color: #000000;
+    --navbar-hover: #d28257;
+    --accent-color: #3d81f3;
+    --dark-bg: #0000006b;
+    --light-text-gr: #ffffff;
+    --white-text: #3d81f3; 
+    --card-box: #000000;
+
+    
+
+    
     /* Text*/
 }
 
@@ -71,7 +76,7 @@ h3 {
 
 .navbar-logo {
     font-family: var(--font-secondary);
-    font-size: 1.4rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--accent-color);
     text-decoration: none;
@@ -87,7 +92,7 @@ h3 {
 }
 
 .nav-link:hover {
-    color: var(--black-text);
+    color: var(--navbar-hover);
 }
 
 .nav-link.dropdown-toggle i.fas.fa-user-circle {
@@ -101,8 +106,8 @@ h3 {
 
 /* --- FOOTER --- */
 .footer {
-    background-color: #050b12;
-    color: var(--light-text-gr);
+    background-color: #d28257;
+    color: var(--third-color);
 }
 
 .footer a {
@@ -257,6 +262,7 @@ a:active {
     box-shadow: 5px 5px 5px 0px #0000006b,
         inset 4px 4px 15px 0px #0000006b,
         15px 4px 48px 15px rgba(18, 18, 18, 0.55);
+    background-color: var(--card-box);
 }
 
 .card-title {
