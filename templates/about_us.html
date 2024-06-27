@@ -1,15 +1,9 @@
-# Django Template Language (DTL)
-
-# ---------------------
-# Extends base template
-# ---------------------
 {% extends "base.html" %}
 
 {% block content %}
 
-# ---------------------
-# Defines the container and masthead section
-# ---------------------
+
+<!-- Defines the container and masthead section -->
 <div class="container col-md-8 col-sm-12">
     <div class="masthead">
         <div class="container card-body">
@@ -21,9 +15,7 @@
         </div>
     </div>
 
-# ---------------------
-# Defines the content section
-# ---------------------
+<!-- Defines the content section -->
     <div class="row">
         <div class="col card mb-4">
             <div class="card-body px-3 px-md-5">
@@ -32,9 +24,9 @@
                     <hr>
                     <p class="mt-3 text-center px-4">NederLearn is an exciting companion in your journey to learn the Dutch language and understand its culture. Instead of the usual mundane and tedious language learning, NederLearn offers a thrilling exploration through films, books, articles, and podcasts about Dutch culture. It's more than just a language app, it's a community of Dutch language enthusiasts ready for a linguistic adventure. Whether you're an expat preparing for the Dutch Integration Exam or simply want to engage in light-hearted banter with Dutch colleagues, NederLearn is the perfect companion. Get ready to add a dash of excitement to your Dutch learning journey. Your adventure begins here.</p>
 
-# ---------------------
-# Defines the button or link for authenticated and non-authenticated users
-# ---------------------
+
+<!--Defines the button or link for authenticated and non-authenticated users-->
+
                     <div class="text-center mt-5">
                         {% if user.is_authenticated %}
                         <a href="{% url 'home' %}" class="btn btn-primary btn-lg">Back to Home</a>
